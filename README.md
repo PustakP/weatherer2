@@ -1,6 +1,6 @@
 # Weatherer
 
-A simple react app for weather requests. Made for SNU GDSC Code Challenge.
+A simple react app for weather requests. Made for SNU GDSC Code Challenge. (Dark Mode slightly functional :( )
 
 A Live Demo of the app can be found [here](https://weathererer.pokilopatterson.repl.co/)
 

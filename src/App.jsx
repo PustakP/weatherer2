@@ -2,11 +2,16 @@ import './App.css';
 import React, { useState } from 'react';
 
 const WeatherApp = () => {
+  const [darkMode, setDarkMode] = useState(false);
   const [location, setLocation] = useState('');
   const [weatherData, setWeatherData] = useState({});
   const apiKey = '80a00696acc0e2753e4fb91df78c644b';
   const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
+  const toggleDarkMode = () => {
+   setDarkMode(!darkMode);
+  };
+  
   const handleSearch = () => {
     if (location) {
       fetchWeather(location);
@@ -26,9 +31,12 @@ const WeatherApp = () => {
   };
 
   return (
-    <div className="h-screen flex flex-col items-center justify-center background-image">
+    <div className={`ma-8 background-image ${darkMode ? 'invert' : ''}`}>
+     <button className="btn btn-secondary" onClick={toggleDarkMode}>Toggle Dark Mode</button>
+
+     <div className={`h-screen flex flex-col items-center justify-center ${darkMode ? 'invert' : ''}`}>
       <div className="mb-8">
-        <h1 className="text-4xl font-bold">
+        <h1 className={`text-4xl font-bold ${darkMode ? 'text-white' : 'text-black'}`}>
           Weatherer: Simple React Weather App
         </h1>
       </div>
@@ -55,7 +63,10 @@ const WeatherApp = () => {
           <br />
         </div>
       </div>
+     </div>
     </div>
+
+
   );
 };
 

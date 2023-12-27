@@ -6,3 +6,15 @@
   background-image: url('https://cdn.discordapp.com/attachments/852761917411557407/1188889891132686366/v960-ning-05.jpg');
   background-size: cover;
 }
+
+.invert {
+ filter: invert(1);
+}
+
+.text-white {
+ color: white;
+}
+
+.text-black {
+ color: black;
+}
